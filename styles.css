@@ -1,0 +1,593 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.logo img {
+    width: 150px; /* Ajusta el tamaño del logo según tu imagen */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+/* Estilos básicos para el carrito de la compra */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#cart-page {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#cart-table th, #cart-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.cart-summary {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.email-section, .delivery-options, .observations, .payment-section, .payment-info {
+    margin-top: 20px;
+}
+
+.email-section input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.delivery-options input {
+    margin-right: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#pay-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#pay-button:hover {
+    background-color: #45a049;
+}
+/* Estilos generales para toda la página web */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilos específicos para la página del carrito */
+#cart-page {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+#cart-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#cart-table th, #cart-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.cart-summary {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.cart-summary p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.email-section, .delivery-options, .observations, .payment-section, .payment-info {
+    margin-top: 20px;
+}
+
+.email-section label, .delivery-options h3, .observations label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.email-section input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.delivery-options label {
+    display: block;
+    margin: 5px 0;
+}
+
+.delivery-options input {
+    margin-right: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    height: 100px;
+}
+
+#pay-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#pay-button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para el bloque de información sobre el sistema de pago */
+.payment-info h3 {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.payment-info p {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.note {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 10px;
+}
+/* Estilos del menú de navegación */
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #4CAF50; /* Fondo verde */
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: white; /* Color de la fuente visible */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #45a049; /* Cambia el color al pasar el ratón */
+}
+
+
+nav ul li a:hover {
+    color: #007BFF; /* Efecto hover */
+}
+
+/* Banner styles */
+#banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#banner img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.banner-text h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.banner-text p {
+    font-size: 1.2em;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Featured Products Section */
+#featured-products {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#featured-products h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.product-item {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-item h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+}
+
+.product-item p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.logo img {
+    width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+/* Products Page */
+#products-page {
+    padding: 50px 20px;
+}
+
+#products-page h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-category {
+    margin-bottom: 40px;
+}
+
+.product-category h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.product-item {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-item h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+}
+
+.product-item p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+/* Estilo exclusivo para la sección de Pulseras */
+#products-page .product-category h2 {
+    color: #d81b60; /* Color rosa fuerte para destacar el título */
+    font-size: 2rem; /* Aumentar el tamaño del texto del título */
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#products-page .product-category .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Diseño adaptable */
+    gap: 20px;
+    padding: 20px;
+    background-color: #fce4ec; /* Fondo suave rosado */
+    border: 2px solid #d81b60; /* Borde que combina con el título */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra para destacar la sección */
+}
+
+#products-page .product-category .product-item {
+    background-color: #ffffff; /* Fondo blanco para las tarjetas de productos */
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #d81b60;
+}
+
+#products-page .product-category .product-item img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#products-page .product-category .product-item h3 {
+    color: #d81b60; /* Mantener el color rosa fuerte en los títulos */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#products-page .product-category .product-item p {
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Efecto hover para destacar los productos */
+#products-page .product-category .product-item:hover {
+    transform: translateY(-5px); /* Efecto de levantamiento al hacer hover */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el ratón */
+}
+/* Estilo para el botón Añadir al carrito */
+.add-to-cart-btn {
+    background-color: #d81b60; /* Color del botón */
+    color: #ffffff; /* Color del texto */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #c2185b; /* Color del botón al pasar el mouse */
+    transform: scale(1.05); /* Efecto al pasar el mouse por encima */
+}
+/* Estilo para el botón de Carrito en la navegación */
+.cart-btn {
+    background-color: #d81b60; /* Color del fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none; /* Quitar subrayado */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cart-btn:hover {
+    background-color: #c2185b; /* Color de hover */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+#funny-video-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+#funny-video-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#funny-video-section video {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+}
