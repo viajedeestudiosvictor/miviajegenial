@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join('webviaje', 'public')));
 
 // Ruta para el archivo 'index.html'
-app.get('/index', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join('webviaje', 'public', 'index.html'));
 });
 
