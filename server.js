@@ -6,20 +6,20 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Servir archivos estáticos de la carpeta 'public'
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join('webviaje', 'public')));
 
 // Ruta para el archivo 'index.html'
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get('/index', (req, res) => {
+    res.sendFile(path.join('webviaje', 'public', 'index.html'));
 });
 
 // Asegúrate de tener tus otras rutas aquí, como la del carrito si es necesario
 // Ejemplo de una ruta para el carrito
 app.get('/carrito', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'carrito.html'));
+    res.sendFile(path.join('webviaje', 'public', 'carrito.html'));
 });
 app.get('/productos', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'productos.html'));
+    res.sendFile(path.join('webviaje', 'public', 'productos.html'));
 });
 
 // Iniciar el servidor
