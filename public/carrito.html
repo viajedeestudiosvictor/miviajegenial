@@ -1,83 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de la Compra</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Vinculando el archivo CSS -->
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header / Encabezado -->
+
     <header>
         <div class="logo">
-            <img src="logo/logoweb.webp" alt="Logo de Víctor"> <!-- Reemplaza con la ruta de tu logo -->
+            <img src="logo/logoweb.webp" alt="Logo de Víctor"> <!-- Reemplaza 'ruta-de-tu-logo.png' con la ubicación de tu archivo de logo -->
         </div>
         <nav>
             <ul>
-                <li><a href="/index.html">Inicio</a></li>
-		<li><a href="productos.html">Productos</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#contact">Contacto</a></li>
+		<li><a href="carrito.html" class="cart-btn">Carrito</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Carrito de la compra -->
-    <section id="cart-page">
-        <h1>Tu Carrito de Compras</h1>
-        <table id="cart-table">
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Precio Unitario</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Productos añadidos dinámicamente -->
-            </tbody>
-        </table>
+    <h1>Carrito de Compras</h1>
+    <div id="cart-items"></div>
+    <h2>Total: <span id="total-price">0</span>€</h2>
 
-        <div class="cart-summary">
-            <p><strong>Total del carrito:</strong> <span id="cart-total">0€</span></p>
-        </div>
+    <button id="add-more-products" onclick="window.location.href='productos.html'">Añadir más productos</button>
 
-        <!-- Espacio para ingresar el email del comprador -->
-        <div class="email-section">
-            <label for="email">Introduce tu correo electrónico para el pago:</label>
-            <input type="email" id="email" placeholder="tuemail@ejemplo.com" required>
-        </div>
+    <form id="checkout-form">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
 
-        <!-- Opciones de entrega -->
-        <div class="delivery-options">
-            <h3>Elige el lugar de entrega:</h3>
-            <label><input type="radio" name="delivery" value="El Tiemblo"> El Tiemblo</label>
-            <label><input type="radio" name="delivery" value="Madrid"> Madrid</label>
-            <label><input type="radio" name="delivery" value="Granada Colegio La Presentación"> Granada Colegio La Presentación</label>
-            <p class="note">Haremos todo lo posible para la entrega. Puedes sugerir otras opciones.</p>
-        </div>
+        <label for="name">Nombre y Apellidos:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <h3>Elige el lugar de entrega:</h3>
+        <label><input type="radio" name="delivery" value="El Tiemblo" required> El Tiemblo</label>
+        <label><input type="radio" name="delivery" value="Madrid" required> Madrid</label>
+        <label><input type="radio" name="delivery" value="Granada Colegio La Presentación" required> Granada Colegio La Presentación</label>
 
-        <!-- Cajón de observaciones -->
-        <div class="observations">
-            <label for="observations">Observaciones o selección de tallas (para sudaderas):</label>
-            <textarea id="observations" placeholder="Escribe aquí tus observaciones o tallas..."></textarea>
-        </div>
+        <br>
+        <label for="observations">Observaciones:</label>
+        <textarea id="observations" name="observations" rows="4" placeholder="Comentarios adicionales, tallas de sudadera, etc."></textarea>
 
-        <!-- Botón de pagar -->
-        <div class="payment-section">
-            <button id="pay-button">Pagar</button>
-        </div>
+        <button type="submit">Pagar</button>
+    </form>
 
-        <!-- Información del sistema de pago -->
-        <div class="payment-info">
-            <h3>Instrucciones de Pago</h3>
-            <p>Una vez que hayas añadido tus productos, haz clic en el botón "Pagar". Se te enviará un correo con un código asociado a tu compra y el número de teléfono para realizar el pago a través de Bizum. El pago será gestionado de forma privada y solo utilizaremos tu correo para completar esta transacción.</p>
-            <p><strong>Bizum:</strong> Te enviaremos el número de teléfono a tu correo para que realices el pago.</p>
-            <p><strong>Email de contacto:</strong> viajedeestudiosvictor@outlook.com</p>
-        </div>
-    </section>
-
-    <script src="carrito.js"></script> <!-- Vinculando el archivo JS -->
+    <script src="carrito.js"></script>
 </body>
 </html>
-

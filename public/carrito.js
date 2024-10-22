@@ -1,78 +1,88 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Array para almacenar productos del carrito
-    let carrito = [
-        { nombre: "Perfume Mujer 21F Carolina Herrera", cantidad: 1, precio: 12 },
-        { nombre: "Sudadera con Gorro Roja", cantidad: 2, precio: 21 }
-    ];
 
-    // Función para renderizar los productos del carrito
-    function renderCart() {
-        const tbody = document.querySelector("#cart-table tbody");
-        tbody.innerHTML = "";
+const cartItemsDiv = document.getElementById('cart-items');
+const totalPriceSpan = document.getElementById('total-price');
+const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
+if (addToCartButtons) {
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const productElement = event.target.parentElement;
+            const productName = productElement.querySelector('h3').textContent;
+            const productPrice = parseFloat(productElement.querySelector('p').textContent.replace('€', ''));
+
+            cartItems.push({ name: productName, price: productPrice });
+            updateCart();
+
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            alert(`${productName} añadido al carrito`);
+        });
+    });
+}
+
+function updateCart() {
+    if (cartItemsDiv && totalPriceSpan) {
+        cartItemsDiv.innerHTML = '';
         let total = 0;
-
-        carrito.forEach(producto => {
-            const row = document.createElement("tr");
-
-            row.innerHTML = `
-                <td>${producto.nombre}</td>
-                <td>${producto.cantidad}</td>
-                <td>${producto.precio}€</td>
-                <td>${producto.cantidad * producto.precio}€</td>
+        cartItems.forEach((item, index) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'cart-item';
+            itemDiv.innerHTML = `
+                <p>${item.name}: ${item.price}€</p>
+                <button onclick="removeItem(${index})">Quitar</button>
             `;
+            cartItemsDiv.appendChild(itemDiv);
+            total += item.price;
+        });
+        totalPriceSpan.textContent = total.toFixed(2);
+    }
+}
 
-            tbody.appendChild(row);
-            total += producto.cantidad * producto.precio;
+function removeItem(index) {
+    cartItems.splice(index, 1);
+    updateCart();
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+const checkoutForm = document.getElementById('checkout-form');
+if (checkoutForm) {
+    checkoutForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const name = document.getElementById('name').value;
+        const delivery = document.querySelector('input[name="delivery"]:checked').value;
+        const observations = document.getElementById('observations').value;
+        const total = totalPriceSpan.textContent;
+        const purchaseCode = generatePurchaseCode();
+
+        const response = await fetch('/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email,
+                name,
+                total,
+                purchaseCode,
+                delivery,
+                observations,
+                cartItems,
+            }),
         });
 
-        document.getElementById("cart-total").textContent = total + "€";
-    }
-
-    // Al hacer clic en el botón de pagar
-    document.getElementById("pay-button").addEventListener("click", function() {
-        const email = document.getElementById("email").value;
-        const observaciones = document.getElementById("observations").value;
-        const deliveryOption = document.querySelector('input[name="delivery"]:checked');
-
-        if (!email || !deliveryOption) {
-            alert("Por favor, completa el correo electrónico y elige una opción de entrega.");
-            return;
+        if (response.ok) {
+            alert('Email enviado con éxito. Revisa tu correo para las instrucciones de pago.');
+        } else {
+            alert('Hubo un error al enviar el email. Inténtalo de nuevo.');
         }
-
-        const delivery = deliveryOption.value;
-
-        // Generar código único de compra
-        const codigoCompra = "COMPRA-" + Math.floor(Math.random() * 1000000);
-
-        // Email de confirmación
-        const emailBody = `
-            Gracias por tu compra, ${email}.\n
-            Código de compra: ${codigoCompra}\n
-            Total: ${document.getElementById("cart-total").textContent}\n
-            Lugar de entrega: ${delivery}\n
-            Observaciones: ${observaciones}\n
-            Para realizar el pago a través de Bizum, por favor contacta al número XXXX.\n
-            Muchas gracias por tu apoyo.\n
-        `;
-
-        // Simulación de envío de email (aquí iría la integración de un servidor de email o API)
-        console.log("Enviando correo a: ", email);
-        console.log(emailBody);
-
-        // Enviar correo a tu cuenta con los detalles de la compra
-        const emailBodyAdmin = `
-            Nueva compra realizada.\n
-            Email del comprador: ${email}\n
-            Código de compra: ${codigoCompra}\n
-            Total: ${document.getElementById("cart-total").textContent}\n
-            Lugar de entrega: ${delivery}\n
-            Observaciones: ${observaciones}\n
-        `;
-        console.log("Enviando detalles a tu email de administrador:", emailBodyAdmin);
-        
-        alert("Gracias por tu compra. Revisa tu correo para completar el pago.");
     });
+}
 
-    renderCart();
-});
+function generatePurchaseCode() {
+    return 'COMPRA-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+}
+
+updateCart();
