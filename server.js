@@ -24,7 +24,7 @@ app.post('/send-email', (req, res) => {
     const transporter = nodemailer.createTransport({
         host: 'smtp-mail.outlook.com',
         port: 587,
-        secure: false, // true para 465, falso para otros puertos
+        secure: false,
         auth: {
             user: 'viajedeestudiosvictor@outlook.com',
             pass: 'AndresZapataRamirez1230'
