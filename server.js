@@ -62,10 +62,18 @@ app.post('/send-email', (req, res) => {
 
     transporter.sendMail(emailOptions, (error, info) => {
         if (error) {
-            return res.status(500).send('Error al enviar el email.');
+            console.error('Error al enviar el email:', error);
+            if (!res.headersSent) {
+                return res.status(500).send('Error al enviar el email.');
+            }
+        } else {
+            console.log('Email enviado: ' + info.response);
+            if (!res.headersSent) {
+                return res.status(200).send('Email enviado con éxito.');
+            }
         }
-        res.status(200).send('Email enviado con éxito.');
     });
+    
 });
 
 
