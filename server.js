@@ -26,10 +26,10 @@ app.post('/send-email', (req, res) => {
     const { email, name, total, purchaseCode, delivery, observations, cartItems } = req.body;
 
     const transporter = nodemailer.createTransport({
-        service: 'Outlook',
+        service: 'Outlook365',
         auth: {
-            user: process.env.EMAIL_USER, 
-            pass: process.env.EMAIL_PASS, 
+            user: viajedeestudiosvictor@outlook.com, 
+            pass: AndresZapataRamirez1230, 
         },
     });
 
