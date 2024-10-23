@@ -29,7 +29,7 @@ app.post('/send-email', (req, res) => {
         service: 'Outlook365',
         auth: {
             user: 'viajedeestudiosvictor@outlook.com', 
-            pass: 'AndresZapataRamirez1230', 
+            pass: 'AndresZapataRamirez1230' 
         },
     });
 
