@@ -22,11 +22,16 @@ app.get('/carrito', (req, res) => {
 app.post('/send-email', (req, res) => {
     const { email, name, total, purchaseCode, delivery, observations, cartItems } = req.body;
     const transporter = nodemailer.createTransport({
-        service: 'smtp.outlook.live.com',
+        host: 'smtp-mail.outlook.com',
+        port: 587,
+        secure: false, // true para 465, falso para otros puertos
         auth: {
             user: 'viajedeestudiosvictor@outlook.com',
             pass: 'AndresZapataRamirez1230'
         },
+        tls: {
+            ciphers: 'SSLv3'
+        }
     });
 
     const emailBody = `
@@ -68,5 +73,3 @@ app.post('/send-email', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor iniciado en el puerto ${PORT}`);
 });
-
-
