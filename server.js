@@ -26,7 +26,7 @@ app.post('/send-email', (req, res) => {
     const { email, name, total, purchaseCode, delivery, observations, cartItems } = req.body;
 
     const transporter = nodemailer.createTransport({
-        service: 'Outlook365',
+        service: 'Outlook',
         auth: {
             user: viajedeestudiosvictor@outlook.com, 
             pass: AndresZapataRamirez1230, 
