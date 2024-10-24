@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const path = require('path');
@@ -22,12 +23,13 @@ app.get('/carrito', (req, res) => {
 app.post('/send-email', (req, res) => {
     const { email, name, total, purchaseCode, delivery, observations, cartItems } = req.body;
     const transporter = nodemailer.createTransport({
-        host: 'smtp-mail.outlook.com',
-        port: 587,
-        secure: false,
+        service: 'Gmail',
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
         auth: {
-            user: 'viajedeestudiosvictor@outlook.com',
-            pass: 'AndresZapataRamirez1230'
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASS
         },
         tls: {
             ciphers: 'SSLv3'
