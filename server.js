@@ -54,9 +54,9 @@ app.post('/send-email', (req, res) => {
     `;
 
     const emailOptions = {
-        from: 'viajedeestudiosvictor@outlook.com',
+        from: 'viajedeestudiosvictor@gmail.com',
         to: email,
-        cc: 'viajedeestudiosvictor@outlook.com',
+        cc: 'viajedeestudiosvictor@gmail.com',
         subject: 'Instrucciones para pagar tu compra',
         text: emailBody,
     };
